@@ -13,7 +13,9 @@
 # a) Their overall "coding skill score" 
 # b) Skills they may want to learn, and how much each one would improve their score
 
+#Welcome message for applicant
 puts "Hello, welcome to the ACME company coding skills test. We will ask for your score out of 100 for a number of coding languages"
+#Gets score out of 10 for each language
 puts "What is your skill out of 10 for Python?"
 python = gets.chomp.to_i
 puts "What is your skill out of 10 for Ruby?"
@@ -31,18 +33,20 @@ css = gets.chomp.to_i
 puts "What is your skill out of 10 for JavaScript?"
 javascript = gets.chomp.to_i
 
+#Applies multiplication to each score so that they are weighted appropriately as per the guide above
 skills = [python, (ruby * 2), (bash * 4), (git * 8), (html * 16), (tdd * 32), (css * 64), (javascript * 128)]
 
 puts "With the weighting applied, your skills are:"
 print skills
-
+#Sum weighted scores of each language for overall skill score
 totalskillscore = skills.sum
 puts ""
 puts "Your total skill score is:"
 print totalskillscore
 puts " out of a possible 2550"
 
-#Define a method for determining which areas the applicant can improve in and how much it would affect their score. 
+#Define a sequential style flow that will check each score and identify areas the 
+# applicant can improve in and how much it could affect their score. 
 if python <= 5 
     puts "Less than 50% - you should think about improving your Python but it won't make much of a difference to your score"
 end
